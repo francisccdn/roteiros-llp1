@@ -22,3 +22,14 @@ bool ControleDeGastos::existeDespesaDoTipo(std::string t){
   }
   return false;
 }
+
+std::string ControleDeGastos::toString(){
+  std::string str = "";
+  int i = 1;
+  for(Despesa k : despesas){
+    str += "Despesa #" + std::to_string(i) + "\n";
+    str += k.toString() + "\n\n";
+    i++;
+  }
+  return str;
+}

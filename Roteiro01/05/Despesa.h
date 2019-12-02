@@ -17,6 +17,8 @@ public:
 
   void setValor(double);
   void setTipo(std::string);
+
+  std::string toString();
 };
 
 #endif //DESPESA_H

@@ -11,8 +11,10 @@ private:
 
 public:
   void setDespesa(Despesa d, int pos);
+
   double calculaTotalDeDespesas();
   bool existeDespesaDoTipo(std::string t);
+  std::string toString();
 };
 
 #endif //CONTROLE_DE_GASTOS_H

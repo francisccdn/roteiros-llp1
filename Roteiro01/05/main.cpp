@@ -17,7 +17,7 @@ int main(){
   meusGastos.setDespesa(gasto2, 1);
   meusGastos.setDespesa(gasto3, 2);
 
-  cout << "Total de gastos: " << meusGastos.calculaTotalDeDespesas() << endl;
+  cout << "Total de gastos: " << meusGastos.calculaTotalDeDespesas() << endl << endl;
   cout << "Existe despesa do tipo 'Comida'? ";
   if(meusGastos.existeDespesaDoTipo("Comida")){
     cout << "Sim" << endl;
@@ -31,6 +31,9 @@ int main(){
   }else{
     cout << "Nao" << endl;
   }
+
+  cout << endl << "Todas as depesas:" << endl << endl;
+  cout << meusGastos.toString() << endl;
 
   return 0;
 }

@@ -15,3 +15,8 @@ void Despesa::setTipo(std::string t){tipoDeGasto = t;}
 
 double Despesa::getValor(){return valor;}
 std::string Despesa::getTipo(){return tipoDeGasto;}
+
+std::string Despesa::toString(){
+  std::string str = "Tipo: " + tipoDeGasto + "\t" + "Valor: " + std::to_string(valor);
+  return str;
+}
