@@ -34,7 +34,8 @@ int main(){
             cout << "Qual o numero do pedido? ";
             cin >> n;
             cout << "Qual a descricao desse pedido? ";
-            cin >> d;
+            cin.ignore();
+            getline(cin, d);
             cout << "Quanto custa esse pedido? ";
             cin >> p;
             cout << "Quantos? ";
@@ -72,7 +73,8 @@ int main(){
                 cout << "Qual o numero do pedido? ";
                 cin >> n;
                 cout << "Qual a descricao desse pedido? ";
-                cin >> d;
+                cin.ignore();
+                getline(cin, d);
                 cout << "Quanto custa esse pedido? ";
                 cin >> p;
                 cout << "Quantos? ";
