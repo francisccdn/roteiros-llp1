@@ -8,7 +8,7 @@ private:
     double horasTrabalhadas;
 
 public:
-    Horista(std::string, int, double, int);
+    Horista(std::string nome, int matricula, double salarioPorHora, int horasTrabalhadas);
 
     void setSalarioPorHora(double s) { salarioBase = s; }
     void setHorasTrabalhadas(int h) { horasTrabalhadas = h; }

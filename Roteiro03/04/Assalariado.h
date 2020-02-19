@@ -5,7 +5,7 @@
 class Assalariado : public Funcionario
 {
 public:
-    Assalariado(std::string, int, double);
+    Assalariado(std::string nome, int matricula, double salario);
 
     void setSalario(double s) { salarioBase = s; }
     double calcularSalario() { return salarioBase; }

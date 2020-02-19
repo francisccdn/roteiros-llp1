@@ -9,7 +9,7 @@ private:
     double percentualComissao;
 
 public:
-    Comissionado(std::string, int, double, double, double);
+    Comissionado(std::string nome, int matricula, double salario, double percentualComissao, double vendasSemanais);
 
     void setSalario(double s) { salarioBase = s; }
     void setPercentualComissao(double p) { percentualComissao = p; }

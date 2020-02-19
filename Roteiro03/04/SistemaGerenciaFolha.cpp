@@ -1,4 +1,6 @@
 #include "SistemaGerenciaFolha.h"
+#include "FuncionarioNaoExisteException.h"
+#include "OrcamentoEstouradoException.h"
 #include <iostream>
 
 SistemaGerenciaFolha::SistemaGerenciaFolha(double orcamentoMax)
@@ -13,14 +15,42 @@ double SistemaGerenciaFolha::calculaTotalFolha()
     {
         total += f->calcularSalario();
     }
-    return total;
+
+    try
+    {
+        if(total > orcamentoMaximo)
+        {
+            throw OrcamentoEstouradoException();
+        }
+        return total;
+    }
+    catch(OrcamentoEstouradoException e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
-double SistemaGerenciaFolha::consultaSalarioFuncionario()
+Funcionario* SistemaGerenciaFolha::procurarFuncionario(std::string nome)
 {
-    for(Funcionario *f : funcionarios)
+    for(Funcionario* f : funcionarios)
     {
-        std::cout << "Funcionario: " << f->getNome() << " | ";
-        std::cout << "Salario: " << f->calcularSalario() << std::endl;
+        if(f->getNome() == nome)
+            return f;
+    }
+
+    throw FuncionarioNaoExisteException();
+}
+
+double SistemaGerenciaFolha::consultaSalarioFuncionario(std::string nome)
+{
+    double salario;
+    try
+    {
+        salario = procurarFuncionario(nome)->calcularSalario();
+        return salario;
+    }
+    catch(FuncionarioNaoExisteException e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
